@@ -20,7 +20,7 @@ public class Employee {
         if(ob == null) return false;
         if(!(ob instanceof Employee)) return false;
         Employee e = (Employee) ob;
-        return e.name.equals(name) && e.age == this.getAge();
+        return e.name.equals(this.getName()) && e.age == this.getAge();
     }
 
     public static void main(String[] args) {
