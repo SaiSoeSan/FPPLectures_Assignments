@@ -19,6 +19,6 @@ public class Employee {
     public boolean equals(Object ob) {
         if(ob == null) return false;
         if(!(ob instanceof Employee e)) return false;
-        return e.name.equals(name) && e.age == age;
+        return e.name.equals(this.getName()) && e.age == this.getAge();
     }
 }

@@ -20,6 +20,6 @@ public class Employee {
         if(ob == null) return false;
         if(ob.getClass() != this.getClass()) return false;
         Employee e = (Employee) ob;
-        return e.name.equals(name) && e.age == age;
+        return e.name.equals(this.getName()) && e.age == this.getAge();
     }
 }
