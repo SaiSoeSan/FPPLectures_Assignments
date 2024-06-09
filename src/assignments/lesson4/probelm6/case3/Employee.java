@@ -18,8 +18,7 @@ public class Employee {
     //Can use instanceof or same classes strategy here since no inheritance
     public boolean equals(Object ob) {
         if(ob == null) return false;
-        if(!(ob instanceof Employee)) return false;
-        Employee e = (Employee) ob;
+        if(!(ob instanceof Employee e)) return false;
         return e.name.equals(this.getName()) && e.age == this.getAge();
     }
 
