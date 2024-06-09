@@ -18,6 +18,6 @@ public final class EmployeeWithBonus{
         if(ob == null) return false;
         if(getClass() != ob.getClass()) return false;
         EmployeeWithBonus ewb = (EmployeeWithBonus) ob;
-        return ewb.e.equals(e) && ewb.bonus == bonus;
+        return ewb.e.equals(e) && ewb.bonus == this.getBonus();
     }
 }
