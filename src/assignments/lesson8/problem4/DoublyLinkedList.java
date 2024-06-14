@@ -124,7 +124,7 @@ public class DoublyLinkedList {
     }
 
     public static void main(String[] args){
-        DoublyLinkedList list = new DoublyLinkedList();
+        DoublyLinkedList list = new DoublyLinkedList();  //header is created here
         list.addLast("Bob");
         list.addLast("Harry");
         list.addLast("Steve");
@@ -133,7 +133,7 @@ public class DoublyLinkedList {
         list.addLast("Sai");
         list.remove("Steve");
         list.removeFirst();
-//        System.out.println(list);
+        System.out.println(list);
         list.printReverse();
 
         // Call all your implemented Methods
