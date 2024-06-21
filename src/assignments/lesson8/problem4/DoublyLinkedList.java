@@ -50,10 +50,10 @@ public class DoublyLinkedList {
     }
 
     public Node findRemoveNode(String item){
-        Node current = header.next;
-        while(current != null){
+        Node current = header.next; // not start from header coz we access value
+        while(current.next != null){
             if( current.value.equals(item)){
-                break;
+                return current;
             }
             current = current.next;
         }
@@ -96,18 +96,68 @@ public class DoublyLinkedList {
         System.out.println(sb.toString());
     }
 
-    @Override
-    public String toString() {
+//    @Override
+//    public String toString() {
+//
+//        StringBuilder sb = new StringBuilder();
+//        toString(sb, header);
+//        return sb.toString();
+//
+//    }
+//    private void toString(StringBuilder sb, Node n) {
+//        if(n==null) return;
+//        if(n.value != null) sb.append(" " + n.value);
+//        toString(sb, n.next);
+//    }
 
-        StringBuilder sb = new StringBuilder();
-        toString(sb, header);
+    public String toString(){
+        StringBuilder bs = new StringBuilder("[");
+        Node current = header.next; // not starting from header
+        while(current.next != null){ // use another next if we loop before last element
+            bs.append(current.value).append(" ");
+            current = current.next;
+        }
+        bs.append(current.value).append("]");
+        return bs.toString();
+    }
+
+    public String reversePrint(){
+        StringBuilder sb = new StringBuilder("[");
+        Node current = header.next; //not start header because we access value
+        while(current.next != null){
+            current = current.next;
+        }
+        Node last = current;
+        while(last.previous != header){
+            sb.append(last.value).append(" ");
+            last = last.previous;
+        }
+        sb.append(last.value).append("]");
         return sb.toString();
 
     }
-    private void toString(StringBuilder sb, Node n) {
-        if(n==null) return;
-        if(n.value != null) sb.append(" " + n.value);
-        toString(sb, n.next);
+
+    public boolean find(String item){
+        if(item == null) return false;
+        if(header.next == null) return false;
+        Node current = header.next; //not start from header
+        while(current != null){
+            if(current.value.equals(item)){
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+
+    public int size(){
+        int count = 0;
+        Node current = header.next; //no count header
+        while(current != null){
+            count = count + 1;
+            current = current.next;
+        }
+        return count;
     }
 
     class Node {
@@ -131,10 +181,14 @@ public class DoublyLinkedList {
         list.addLast("Magdy");
         list.addLast("Cuong");
         list.addLast("Sai");
-        list.remove("Steve");
-        list.removeFirst();
+        System.out.println(list.find("Sai"));
+        System.out.println(list.size());
         System.out.println(list);
-        list.printReverse();
+        System.out.println(list.reversePrint());
+//        list.remove("Steve");
+//        list.removeFirst();
+//        System.out.println(list);
+//        list.printReverse();
 
         // Call all your implemented Methods
     }

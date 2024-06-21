@@ -31,7 +31,7 @@ public class EmployeeTest {
         boolean res = e11.equals(e12);
         System.out.println("e11.equals(e12) = " + res);
 
-        //Call Employee Comparator to test e11 and e12 for equlity
+        //Call Employee Comparator to test e11 and e12 for equality
         EmployeeFirstnameCom ep = new EmployeeFirstnameCom();
         int com = ep.compare(e11,e12);  // false
         System.out.println("ep.compare(e11, e12) = " + com );  // true

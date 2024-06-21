@@ -8,7 +8,6 @@ public class Main {
         aq.enqueue(30);
         aq.enqueue(20);
         aq.dequeue();
-        System.out.println(aq.size());
         System.out.println(aq);
         System.out.println(aq.peek());
     }
